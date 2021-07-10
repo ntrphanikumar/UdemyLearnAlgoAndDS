@@ -1,6 +1,6 @@
 package learn.udemy.dsalgo.sort;
 
-import static learn.udemy.dsalgo.sort.Utils.print;
+import static learn.udemy.dsalgo.Utils.print;
 
 public class InsertionSort<T extends Comparable> {
     public static void main(String[] args) {

@@ -1,7 +1,7 @@
 package learn.udemy.dsalgo.sort;
 
-import static learn.udemy.dsalgo.sort.Utils.print;
-import static learn.udemy.dsalgo.sort.Utils.swap;
+import static learn.udemy.dsalgo.Utils.print;
+import static learn.udemy.dsalgo.Utils.swap;
 
 public class SelectionSort<T extends Comparable> {
     public static void main(String[] args) {

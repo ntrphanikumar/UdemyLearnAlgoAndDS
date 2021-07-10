@@ -1,5 +1,3 @@
-learn/udemy/dsalgo/sort/Utils.java
- learn.udemy.dsalgo.sort.Utils
 learn/udemy/dsalgo/sort/BubbleSort.java
  learn.udemy.dsalgo.sort.BubbleSort
 learn/udemy/dsalgo/sort/SelectionSort.java
@@ -8,3 +6,9 @@ learn/udemy/dsalgo/sort/InsertionSort.java
  learn.udemy.dsalgo.sort.InsertionSort
 learn/udemy/dsalgo/sort/ShellSort.java
  learn.udemy.dsalgo.sort.ShellSort
+learn/udemy/dsalgo/Factorial.java
+ learn.udemy.dsalgo.Factorial
+learn/udemy/dsalgo/Utils.java
+ learn.udemy.dsalgo.Utils
+learn/udemy/dsalgo/sort/MergeSort.java
+ learn.udemy.dsalgo.sort.MergeSort

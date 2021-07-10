@@ -1,4 +1,4 @@
-package learn.udemy.dsalgo.sort;
+package learn.udemy.dsalgo;
 
 public class Utils {
     public static final <T> void print(T[] array) {
