@@ -12,3 +12,7 @@ learn/udemy/dsalgo/Utils.java
  learn.udemy.dsalgo.Utils
 learn/udemy/dsalgo/sort/MergeSort.java
  learn.udemy.dsalgo.sort.MergeSort
+learn/udemy/dsalgo/sort/QuickSort.java
+ learn.udemy.dsalgo.sort.QuickSort
+learn/udemy/dsalgo/SortByRadixSort.java
+ learn.udemy.dsalgo.SortByRadixSort
