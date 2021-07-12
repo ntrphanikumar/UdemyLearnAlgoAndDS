@@ -1,2 +1,6 @@
 .idea
 .gradle
+temp
+tmp
+target
+build
