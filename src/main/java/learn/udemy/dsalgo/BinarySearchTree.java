@@ -51,8 +51,45 @@ public class BinarySearchTree<T extends Comparable<T>> {
         System.out.println();
     }
 
+    public T min() {
+        return root == null ? null : root.min();
+    }
+
+    public T max() {
+        return root == null ? null : root.max();
+    }
+
+    public TreeNode<T> get(T value) {
+        return root == null ? null : root.get(value);
+    }
+
+    public void delete(T value) {
+        root = delete(root, value);
+    }
+
+    private TreeNode<T> delete(TreeNode<T> subTreeRoot, T value) {
+        if (subTreeRoot == null) {
+            return null;
+        }
+        if (value.compareTo(subTreeRoot.data) < 0) {
+            subTreeRoot.leftNode = delete(subTreeRoot.leftNode, value);
+        } else if (value.compareTo(subTreeRoot.data) > 0) {
+            subTreeRoot.rightNode = delete(subTreeRoot.rightNode, value);
+        } else {
+            if (subTreeRoot.leftNode == null) {
+                return subTreeRoot.rightNode;
+            }
+            if (subTreeRoot.rightNode == null) {
+                return subTreeRoot.leftNode;
+            }
+            subTreeRoot.data = subTreeRoot.rightNode.min();
+            subTreeRoot.rightNode = delete(subTreeRoot.rightNode, subTreeRoot.data);
+        }
+        return subTreeRoot;
+    }
+
     private static class TreeNode<T extends Comparable<T>> {
-        private final T data;
+        private T data;
         private TreeNode<T> leftNode;
         private TreeNode<T> rightNode;
 
@@ -123,6 +160,32 @@ public class BinarySearchTree<T extends Comparable<T>> {
             }
             System.out.print(" " + data);
         }
+
+        public TreeNode<T> get(T value) {
+            if (value.equals(data)) {
+                return this;
+            }
+            if (value.compareTo(data) < 0) {
+                return leftNode == null ? null : leftNode.get(value);
+            } else {
+                return rightNode == null ? null : rightNode.get(value);
+            }
+        }
+
+        public T min() {
+            return leftNode == null ? data : leftNode.min();
+        }
+
+        public T max() {
+            return rightNode == null ? data : rightNode.max();
+        }
+
+        @Override
+        public String toString() {
+            return "TreeNode{" +
+                    "data=" + data +
+                    '}';
+        }
     }
 
     public static void main(String[] args) {
@@ -131,6 +194,15 @@ public class BinarySearchTree<T extends Comparable<T>> {
         bst.printPreOrder();
         bst.printInOrder();
         bst.printPostOrder();
+        bst.printLevelOrder();
+        System.out.println("Min: " + bst.min());
+        System.out.println("Max: " + bst.max());
+        System.out.println("Find 27: " + bst.get(27));
+        System.out.println("Find 45: " + bst.get(45));
+        System.out.println("Find 10: " + bst.get(10));
+        bst.delete(25);
+        bst.printLevelOrder();
+        bst.delete(26);
         bst.printLevelOrder();
     }
 }
